@@ -1,0 +1,195 @@
+/*
+Theme Name: Movies
+Theme URI: https://wordpress.org/
+Author: Korka
+Author URI: https://github.com/korka13
+Description: Simple theme for cinama blog using bootstrap 4
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Movies
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@media (min-width: 48em) {
+    html {
+      font-size: 18px;
+    }
+  }
+  
+  body {
+    font-family: 'Nanum Gothic Coding', monospace;
+    color: #555;
+    background-image: url(img/bg6.jpg)
+  }
+  
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+   
+    font-weight: normal;
+    color: #333;
+  }
+  
+  a {
+    color: #007c25;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: #00bd39;
+  }
+  /*
+   * Override Bootstrap's default container.
+   */
+  
+  .container {
+    max-width: 60rem;
+    padding: 13px;
+  }
+  
+  
+  /*
+   * Masthead for nav
+   */
+  
+  .blog-masthead {
+    margin-bottom: 3rem;
+    background-color: #1b1b1b;
+    -webkit-box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+            box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+  }
+  
+  /* Nav links */
+  nav.blog-nav li a {
+    position: relative;
+    padding: 1rem;
+    font-weight: 500;
+    color: #b7b8b7;
+  }
+  nav.blog-nav li a:hover,
+  nav.blog-nav li a:focus {
+    color: #04c43d;
+    background-color: transparent;
+  }
+  
+  /* Active state gets a caret at the bottom */
+  nav.blog-nav li.active a {
+    color: #fff;
+  }
+  nav.blog-nav li.active a:after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -.3rem;
+    vertical-align: middle;
+    content: "";
+    border-right: .3rem solid transparent;
+    border-bottom: .3rem solid;
+    border-left: .3rem solid transparent;
+  }
+  
+  
+  /*
+   * Blog name and description
+   */
+  
+  .blog-header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    /* border-bottom: .05rem solid #eee; */
+  }
+  .blog-title {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  .blog-description {
+    font-size: 1.1rem;
+    
+  }
+  
+  @media (min-width: 40em) {
+    .blog-title {
+      font-size: 3.5rem;
+    }
+  }
+  
+  
+  /*
+   * Main column and sidebar layout
+   */
+  
+  /* Sidebar modules for boxing content */
+  .sidebar-module {
+    padding: 1rem;
+    /*margin: 0 -1rem 1rem;*/
+  }
+  .sidebar-module-inset {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: .25rem;
+  }
+  .sidebar-module-inset p:last-child,
+  .sidebar-module-inset ul:last-child,
+  .sidebar-module-inset ol:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  /* Pagination */
+  .blog-pagination {
+    margin-bottom: 4rem;
+  }
+  .blog-pagination > .btn {
+    border-radius: 2rem;
+  }
+  
+  
+  /*
+   * Blog posts
+   */
+  
+  .blog-post {
+    margin-bottom: 4rem;
+  }
+  .blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+  }
+
+  a .blog-post-title:hover {
+    color: #555555;
+    /* font-weight: 800; */
+    
+  }
+
+  .blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+  }
+  
+  
+  /*
+   * Footer
+   */
+  
+  .blog-footer {
+    padding: 1rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #1b1b1b;
+    border-top: .05rem solid #e5e5e5;
+  }
+  .blog-footer p:last-child {
+    margin-bottom: 0;
+  }
+
+a:hover { cursor: url('data:image/x-icon;base64,AAACAAEAICAAAA0ABQCoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAABQAAAAkAAAALAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACQAAAAcAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAwAAAAVAAAAGQAAABwAAAAeAAAAHgAAAB4AAAAeAAAAHgAAABoAAAAUAAAADAAAAAYAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAJgAAADkAAAA+AAAAQAAAAEEAAABBAAAAQQAAAEEAAABBAAAANAAAACMAAAAQAAAACQAAAAQAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAACYAAABHAAAAZgAAAGgAAABpAAAAagAAAGoAAABqAAAAagAAAGoAAABSAAAANQAAABQAAAAMAAAABQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAANQAAAGAAAACCAAAAgwAAAIMAAACDAAAAgwAAAIMAAACDAAAAgwAAAGgAAABEAAAAGwAAAA8AAAAHAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQsLC/8ICAj/AwMD/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wMDA/8AAACMAAAAdwAAAFEAAAAnAAAAEgAAAAoAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAA///////7+/v/////////////////////////////////GBgY/wAAAI4AAACDAAAAYAAAADcAAAAVAAAADQAAAAUAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABUdHR3/+/v7//////////////////////////////////////8qKir/AAAAjgAAAIoAAABsAAAARAAAABsAAAAPAAAABwAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHBwcH////////////9fX1//////////////////////////////////z8/P8MDAz/AAAAjQAAAHcAAABRAAAAJgAAABEAAAAIAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABUAAAD/+fn5/////////////////////////////////////////////////wEBAf8AAACOAAAAgwAAAF8AAAA1AAAAEgAAAAkAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAAA//39/f/9/f3/////////////////////////////////////////////////AQEB/wAAAI4AAACKAAAAaAAAAD8AAAASAAAACQAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAABgJCQn//Pz8///////////////////////////////////////////////////////6+vr/IyMj/wAAAI0AAABrAAAAQgAAABIAAAAJAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASBAQE//n5+f/09PT///////////////////////////////////////////////////////j4+P8nJyf/AAAAjgAAAGsAAABBAAAAEAAAAAgAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMJCQn////////////9/f3////////////////////////////////////////////9/f3//////ywsLP8AAACMAAAAaQAAAD8AAAAOAAAABgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQE//r6+v/6+vr/AAAA//////////////////////////////////////////////////39/f//////LCws/wAAAIkAAABkAAAAOAAAAAoAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDA//b29v///////////8AAAD///////r6+v/7+/v////////////////////////////y8vL///////39/f8sLCz/AAAAfAAAAFUAAAAqAAAABgAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwMD/+Tk5P/9/f3/BAQE/wYGBv/////////////////09PT/9PT0/////////////v7+/ycnJ//w8PD//////ywsLP8AAABhAAAAOAAAABYAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGBgb/BAQE/wgICP8AAAAQAQEB////////////AQEB//39/f//////CQkJ//39/f/+/v7/Gxsb/+fn5//w8PD/KSkp/wAAADwAAAAZAAAACAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIDAwP///////////8BAQH//f39//////8JCQn//f39//7+/v8bGxv/7e3t/wwMDP8AAAAsAAAAGQAAAAcAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/z8/P//v7+/wICAv/8/Pz//////wEBAf/7+/v/5+fn/ycnJ/8AAAD/AAAAJAAAAA8AAAAHAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8EBAT/BwcH//z8/P//////BQUF/wICAv8AAAD/AAAASwAAABsAAAAPAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQH///////39/f8JCQn/AAAAjgAAAGsAAABDAAAAEgAAAAgAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAf///////f39/wkJCf8AAACMAAAAaQAAAD8AAAANAAAABgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEB///////9/f3/CQkJ/wAAAIgAAABjAAAANwAAAAkAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQH///////39/f8JCQn/AAAAeAAAAFMAAAApAAAABQAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAf///////f39/wkJCf8AAABVAAAANwAAABUAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////+/v7/AAAA/wAAACkAAAAYAAAABwAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADw8P/wUFBf8AAAAMAAAADAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////4B///wAf//8AD///AA///gAP//4AB//8AAf//AAH//gAB//4AAf/8AAH/+AAD//gAA//4gAP//4AH//+AD///wD////B////wf///8H////D////w////8P////n///////////////////////8='), auto; }
