@@ -17,34 +17,24 @@
 
     <div class="blog-masthead">
       <div class="container">
-        <nav class="nav blog-nav">
+      <nav class="navbar navbar-expand-md blog-nav" role="navigation">
         <?php
-        wp_nav_menu
-        ( array
-                (
-                'theme_location'  => 'my-custom-menu', // as defined by "register_nav_menu( 'Menu-Handle', 'Menu Label')", located in functions.php
-                'menu'            => '',
-                'container'       => 'nav', // "div" or "nav" (use "nav" for HTML5)
-                'container_class' => 'nav blog-nav',
-                'container_id'    => 'Menu',
-                'menu_class'      => '',
-                'menu_id'         => '',
-                'echo'            => true,
-                'fallback_cb'     => 'wp_page_menu',
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'items_wrap'      => '%3$s',
-                'depth'           => 0,
-                'walker'          => ''
-                )
-        );
+        wp_nav_menu( array(
+          'theme_location'  => 'primary',
+          'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+          'container'       => 'div',
+          'container_class' => '',
+          'container_id'    => 'bs-example-navbar-collapse-1',
+          'menu_class'      => 'navbar-nav mr-auto',
+          'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'          => new WP_Bootstrap_Navwalker(),
+        ) );
 ?>
 </nav>
+        </div>
         
         
-      </div>
+      
     </div>
     <div class="blog-header">
       <div class="container">

@@ -9,20 +9,20 @@
       <?php while(have_posts()) : the_post(); ?>
 
           <div class="blog-post">
-            <a href="<?php the_permalink(); ?>"><h2 class="blog-post-title"><?php the_title(); ?></h2></a>
+            <h2 class="blog-post-title"><?php the_title(); ?></h2>
             <?php if(has_post_thumbnail()) : ?>
             
             <div class="post-img">
-            <a href="<?php the_permalink(); ?>">
+            
             <?php the_post_thumbnail(); ?>
-            </a>
+            
             </div>
             
             <?php endif; ?>
             <p class="blog-post-meta"><?php echo get_the_date(); ?> | <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><?php the_author(); ?></a></p>
 
-            <?php the_excerpt(); ?> <span><a href="<?php the_permalink(); ?>">Read more...</a></span>
-
+            <span><?php the_content(); ?> <a href="<?php the_permalink(); ?>">Read more...</a></span>
+            <?php comments_template(); ?>
             
 
           </div><!-- /.blog-post -->
@@ -33,7 +33,5 @@
     <?php endif; ?>
 
         </div><!-- /.blog-main -->
-
-
 
 <?php get_footer(); ?>
