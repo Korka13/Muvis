@@ -22,12 +22,13 @@
             <p class="blog-post-meta"><?php echo get_the_date(); ?> | <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><?php the_author(); ?></a></p>
 
             <?php the_excerpt(); ?> <span><a href="<?php the_permalink(); ?>">Read more...</a></span>
-
-            
-
           </div><!-- /.blog-post -->
-
+          
           <?php endwhile; ?>
+          <nav class="blog-pagination">
+            <?php previous_posts_link( 'Newer posts' ); ?>
+            <?php next_posts_link( 'Older posts' ); ?>
+          </nav>
     <?php else : ?>
       <p><?php __('No Posts Found'); ?> </p>
     <?php endif; ?>

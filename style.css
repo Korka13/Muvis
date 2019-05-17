@@ -1,13 +1,13 @@
 /*
-Theme Name: Movies test 2
+Theme Name: Muvis
 Theme URI: https://wordpress.org/
-Author: Korka
+Author: Korka13
 Author URI: https://github.com/korka13
-Description: Simple theme for cinama blog using bootstrap 4
+Description: Simple theme for cinema blog using bootstrap 4
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: Movies
+Text Domain: Muvis
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -21,8 +21,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
   
   body {
     font-family: 'Nanum Gothic Coding', monospace;
-    color: #555;
-    background-image: url(img/bg6.jpg)
+    color: #333;
+    background-image: url(img/bg10.jpg);
   }
   
   h1, .h1,
@@ -50,13 +50,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
   
   .container {
     max-width: 60rem;
-    padding: 0;
   }
 
   .navbar {
     padding: 0;
   }
   
+.navbar-toggler-icon {
+  color: #fff;
+}
   
   /*
    * Masthead for nav
@@ -78,7 +80,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
   nav.blog-nav li a:hover,
   nav.blog-nav li a:focus {
-    color: #04c43d;
+    color: #03c23d;
     background-color: transparent;
   }
   
@@ -107,17 +109,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
   
   .blog-header {
     padding-bottom: 1.25rem;
-    margin-bottom: 2rem;
-    /* border-bottom: .05rem solid #eee; */
+    margin-bottom: 2rem;    
+    
   }
   .blog-title {
     margin-bottom: 0;
     font-size: 2rem;
     font-weight: normal;
   }
+
   .blog-description {
     font-size: 1.1rem;
-    
+    padding-bottom: 2rem;
+    border-bottom: .05rem solid #1b1b1b;
   }
   
   @media (min-width: 40em) {
@@ -134,18 +138,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
   /* Sidebar modules for boxing content */
   .sidebar-module {
     padding: 1rem;
-    /*margin: 0 -1rem 1rem;*/
+    margin: 0 -2rem 1rem;
   }
-  .sidebar-module-inset {
-    padding: 1rem;
-    background-color: #f5f5f5;
-    border-radius: .25rem;
-  }
-  .sidebar-module-inset p:last-child,
-  .sidebar-module-inset ul:last-child,
-  .sidebar-module-inset ol:last-child {
-    margin-bottom: 0;
-  }
+.sidebar-module ul{
+  list-style: none;
+  padding: 0;
+}
   
   
   /* Pagination */
@@ -180,7 +178,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
     color: #999;
   }
   
-  
+  .page-wrapper {
+    position: relative;
+    min-height: 100vh;
+  }
   /*
    * Footer
    */
@@ -191,6 +192,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
     text-align: center;
     background-color: #1b1b1b;
     border-top: .05rem solid #e5e5e5;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }
   .blog-footer p:last-child {
     margin-bottom: 0;
@@ -200,7 +204,14 @@ div.post-img img {
   width: 100%;
   height: auto;
   margin: 10px 0;
+  transition: all 1s;
 }
+
+div.post-img a img:hover {
+  transform: scale(1.01);
+  opacity: 0.9;
+}
+
 
 .comments {
   border: 1px #ccc solid;
@@ -252,3 +263,68 @@ li.comment {
   list-style: none;
 }
 
+.screen-reader-text {
+  display: none;
+}
+
+.btn-outline-primary {
+  color: #007c25;
+  outline-color: #007c25;
+  border-color: #007c25;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007c25;
+  border-color: #007c25;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007c25;
+  border-color: #007c25;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+  background-color: #007c25;
+  border-color: #007c25;
+}
+
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 168, 42, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(3, 194, 61)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  margin: .5rem 0;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+.navbar-toggler {
+  background: #1b1b1b;
+  border: none;
+}
+
+div.nav-drop form select {
+  border-radius: 8px;
+}
+
+div.nav-drop form input {
+  border-radius: 15px;
+}
+
+div.nav-drop form input[type=submit] {
+  color: #007c25;
+  background-color: #fff;
+  border: 1px solid #007c25;
+}
+
+div.nav-drop form select option:focus {
+  outline: none;
+}
+
+div.nav-drop form:focus, div.nav-drop form input:focus, div.nav-drop form select:focus {
+  outline: none;
+}
