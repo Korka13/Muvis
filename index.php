@@ -19,7 +19,6 @@
             </div>
             
             <?php endif; ?>
-            <p class="blog-post-meta"><?php echo get_the_date(); ?> | <a href="<?php echo get_author_posts_url(get_the_author_meta("ID")); ?>"><?php the_author(); ?></a></p>
 
             <?php the_excerpt(); ?> <span><a href="<?php the_permalink(); ?>">Read more...</a></span>
           </div><!-- /.blog-post -->
