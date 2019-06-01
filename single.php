@@ -29,18 +29,30 @@
            
 
 			<div class="film-meta-wrapper">
-				<p><strong>Regia</strong>:
-				<?php echo get_the_term_list( get_the_ID(), 'director' ) ?>
-				</p>
+
+				<?php if( has_term( '', 'director' ) ): ?>
+						<p><strong>Regia</strong>:
+						<?php echo get_the_term_list( get_the_ID(), 'director' ) ?>
+						</p>
+				<?php endif; ?>				
+
+				<?php if( has_term( '', 'cast' ) ): ?>
 				<p><strong>Cast</strong>:
 				<?php echo get_the_term_list( get_the_ID(), 'cast' ) ?>
 				</p>
+				<?php endif; ?>	
+
+				<?php if( has_term( '', 'anno' ) ): ?>
 				<p><strong>Anno</strong>:
 				<?php echo get_the_term_list( get_the_ID(), 'anno' ) ?>
 				</p>
+				<?php endif; ?>	
+
+				<?php if( has_term( '', 'country' ) ): ?>
 				<p><strong>Paese</strong>:
 				<?php echo get_the_term_list( get_the_ID(), 'country' ) ?>
 				</p>
+				<?php endif; ?>	
 
 				<?php if( get_field('durata') ): ?>
 				<p><strong>Durata</strong>: <?php the_field('durata'); ?></p>
