@@ -25,6 +25,7 @@ function set_excerpt_length(){
 
 add_filter('excerpt_length', 'set_excerpt_length');
 
+// Widgets sidebar
 function wpb_init_widgets($id){
     register_sidebar(array(
         'name' => 'Sidebar',
@@ -50,6 +51,7 @@ function wpb_init_widgets($id){
 
 add_action('widgets_init', 'wpb_init_widgets');
 
+// Pagination
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
@@ -57,12 +59,15 @@ function posts_link_attributes() {
     return 'class="btn btn btn-outline-primary"';
 }
 
+// Change “Select Category” Name Within Category Dropdown Widget
+
 function _category_dropdown_filter( $cat_args ) {
     $cat_args['show_option_none'] = __('Categorie');
     return $cat_args;
 }
 add_filter( 'widget_categories_dropdown_args', '_category_dropdown_filter' );
 
+// post enumeration
 function Get_Post_Number($postID){
 	$temp_query = $wp_query;
 	$postNumberQuery = new WP_Query('orderby=date&order=<strong>DESC</strong>&posts_per_page=-1');
@@ -81,6 +86,7 @@ function Get_Post_Number($postID){
 	return $postCount;
 }
 
+// require Advanced Custom Fields plugin
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'muvis_register_required_plugins' );
@@ -130,6 +136,8 @@ function muvis_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
+// Advanced Custom Fields configuration
+
 if( function_exists('acf_add_local_field_group') ):
 
   acf_add_local_field_group(array(
@@ -138,11 +146,11 @@ if( function_exists('acf_add_local_field_group') ):
     'fields' => array(
       array(
         'key' => 'field_5ca5e7a4b0a9b',
-        'label' => 'Durata (min)',
+        'label' => 'Durata',
         'name' => 'durata',
-        'type' => 'number',
-        'instructions' => '',
-        'required' => 1,
+        'type' => 'text',
+        'instructions' => 'per esempio "2 ore" o "123 minuti"',
+        'required' => 0,
         'conditional_logic' => 0,
         'wrapper' => array(
           'width' => '',
@@ -152,10 +160,8 @@ if( function_exists('acf_add_local_field_group') ):
         'default_value' => '',
         'placeholder' => '',
         'prepend' => '',
-        'append' => 'min.',
-        'min' => '',
-        'max' => '',
-        'step' => '',
+        'append' => '',
+        'maxlength' => '',
       ),
       array(
         'key' => 'field_5ca5ea85ae2af',
@@ -424,6 +430,7 @@ if( function_exists('acf_add_local_field_group') ):
   
   endif;
 
+  // Custom taxonomies
 add_action( 'init', 'create_directors' );
 function create_directors() {
  $labels = array(
