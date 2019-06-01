@@ -135,9 +135,9 @@ if( $links4 ):
 	<li><a href="<?php echo esc_url($link_url); ?>" target="_blank"><?php echo esc_html($link_title); ?></a></li>
 <?php endif; ?>
 </ul>
-            
-            <?php comments_template(); ?>
-            
+            <?php if( comments_open() ): ?>
+            	<?php comments_template(); ?>
+            <?php endif; ?>
 
           </div><!-- /.blog-post -->
 
