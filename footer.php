@@ -8,7 +8,20 @@
 
 
 <footer class="blog-footer">
-      <p>&copy <?php echo Date("Y"); ?> - <a href="/"><?php bloginfo("name"); ?></a> | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+      <p>&copy <?php echo Date("Y"); ?> - <a href="/"><?php bloginfo("name"); ?></a> 
+      <?php
+          wp_nav_menu( array(
+            'theme_location'  => 'footer',
+            'depth'	          => 1, // 1 = no dropdowns, 2 = with dropdowns.
+            'container'       => '',
+            'container_class' => '',
+            'container_id'    => '',
+            'menu_class'      => 'list-unstyled d-inline-flex p-0',
+            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'          => new WP_Bootstrap_Navwalker(),
+          ) );
+          ?>
+          </p>
     </footer>
 
     <?php wp_footer(); ?>

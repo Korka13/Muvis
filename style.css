@@ -187,6 +187,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
    */
   
   .blog-footer {
+    display: inline-flex;
+    justify-content: center;
     padding: 1rem 0;
     color: #999;
     text-align: center;
@@ -196,9 +198,26 @@ Use it to make something cool, have fun, and share what you've learned with othe
     position: absolute;
     bottom: 0;
   }
-  .blog-footer p:last-child {
-    margin-bottom: 0;
+
+  .blog-footer p{
+    padding: 0 10px;
+    margin: 0;
   }
+  .blog-footer ul{
+    
+    margin: 0;
+  }
+
+.blog-footer ul li a {
+  padding: 0 10px;
+}
+
+.blog-footer ul li{
+  display: flex;
+}
+.blog-footer ul li::before {
+  content: "|"
+}
 
 div.post-img img {
   width: 100%;

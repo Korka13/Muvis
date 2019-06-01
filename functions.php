@@ -9,6 +9,7 @@ function wpb_theme_setup(){
     // Nav Menus
     register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'THEMENAME' ),
+	'footer' => __( 'Footer Menu', 'THEMENAME' ),
 ) );
 
 }
