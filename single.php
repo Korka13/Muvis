@@ -17,6 +17,7 @@
             <?php the_post_thumbnail(); ?>
             
             </div>
+						<p class="post-category"><?php the_category(' / '); ?></p>
             
             <?php endif; ?>
 						<p>
@@ -28,31 +29,33 @@
            
 
 			<div class="film-meta-wrapper">
-			<p><strong>Regia</strong>:
-				<?php the_field('regia'); ?>
-			</p>
-			<p><strong>Cast</strong>:
-				<?php the_field('cast'); ?>
-			</p>
-			<p><strong>Anno</strong>:
-				<?php the_field('anno'); ?>
-			</p>
-			<p><strong>Paese</strong>:
-				<?php the_field('paese'); ?>
-			</p>
-			<p><strong>Durata</strong>:
-				<?php the_field('durata'); ?>
-      </p>
-      <p><strong>Il voto di <?php bloginfo("name"); ?></strong>:
-				<?php the_field('rating'); ?>
-      </p>
+				<p><strong>Regia</strong>:
+				<?php echo get_the_term_list( get_the_ID(), 'director' ) ?>
+				</p>
+				<p><strong>Cast</strong>:
+				<?php echo get_the_term_list( get_the_ID(), 'cast' ) ?>
+				</p>
+				<p><strong>Anno</strong>:
+				<?php echo get_the_term_list( get_the_ID(), 'anno' ) ?>
+				</p>
+				<p><strong>Paese</strong>:
+				<?php echo get_the_term_list( get_the_ID(), 'country' ) ?>
+				</p>
+
+				<?php if( get_field('durata') ): ?>
+				<p><strong>Durata</strong>: <?php the_field('durata'); ?></p>
+				<?php endif; ?>
+				
+				
 			</div>
 
       <?php the_content(); ?>
 
+			<?php if( get_field('premi') ): ?>
       <p><strong>Premi:</strong>
 				<?php the_field('premi'); ?>
       </p>
+			<?php endif; ?>
 
       <?php 
 $linkc1 = get_field('link_compra_1');

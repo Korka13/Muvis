@@ -19,6 +19,7 @@
             </div>
             
             <?php endif; ?>
+            <p class="post-category"><?php the_category(' / '); ?></p>
 
             <?php the_excerpt(); ?> <span><a href="<?php the_permalink(); ?>">Read more...</a></span>
           </div><!-- /.blog-post -->
